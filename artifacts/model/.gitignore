@@ -1,4 +1,4 @@
-
+artifacts/model/model.joblib
 venv/
 .venv/
 __pycache__/
@@ -12,3 +12,4 @@ mlruns/
 logs/
 *.log
 .vscode/ 
+/model.joblib
