@@ -26,6 +26,17 @@ jobs:
           pip install -r requirements-api.txt
           pip install pytest httpx
 
+      - name: Download dataset
+        run: |
+          mkdir -p data/raw
+          curl -L --fail --silent --show-error \
+            https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv \
+            -o data/raw/dataset.csv
+
+      - name: Run preprocessing
+        run: |
+          python -m src.data.preprocess
+
       - name: Run tests
         run: |
-          python -m pytest tests/ -v 
+          python -m pytest tests/ -v
