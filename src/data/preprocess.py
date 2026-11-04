@@ -69,9 +69,11 @@ def clean_data(df):
     df = df.drop_duplicates()
 
     df["TotalCharges"] = pd.to_numeric(
-        df["TotalCharges"],
-        errors="coerce"
+    df["TotalCharges"].astype(str).str.strip(),
+    errors="coerce"
     )
+
+    df["TotalCharges"] = df["TotalCharges"].fillna(0)
 
     df = df.drop(columns=[ID_COLUMN])
 

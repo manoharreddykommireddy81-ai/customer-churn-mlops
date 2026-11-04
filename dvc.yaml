@@ -17,8 +17,6 @@ stages:
       - src/models/train.py
       - src/models/evaluate.py
       - src/data/preprocess.py
-    outs:
-      - artifacts/model/model.joblib
     metrics:
       - metrics/evaluation.json:
-          cache: false 
+          cache: false
