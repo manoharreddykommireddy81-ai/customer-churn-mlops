@@ -1,0 +1,14 @@
+
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
+mlruns/
+.ipynb_checkpoints/
+logs/
+*.log
+.vscode/ 
